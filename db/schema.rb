@@ -34,12 +34,6 @@ ActiveRecord::Schema.define(version: 2021_06_17_041425) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "feeds", force: :cascade do |t|
-    t.text "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
