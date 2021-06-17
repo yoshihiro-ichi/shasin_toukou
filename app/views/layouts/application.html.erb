@@ -10,7 +10,8 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
+    <header>
+      <% flash.each do |key, value| %>
           <%= content_tag(:div, value, class: "#{key}") %>
         <% end %>
         <% if logged_in? %>
@@ -19,6 +20,8 @@
         <% else %>
           <%= link_to "Sign up", new_user_path %>
           <%= link_to "Login", new_session_path %>
+    </header>
+        <footer>株式会社yoshi</footer>
         <% end %>
     <%= yield %>
   </body>
