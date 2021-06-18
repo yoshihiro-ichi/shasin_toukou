@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       end
     end
   end
+  root 'users#new'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create,:show]
   resources :favorites, only: [:create, :destroy]
