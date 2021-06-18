@@ -1,5 +1,7 @@
 {
   "name": "session_login",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
 }
