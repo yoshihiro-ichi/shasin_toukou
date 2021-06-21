@@ -10,12 +10,12 @@ body {
   text-align: center;
   overflow: scroll;
 }
-#wrap {
-  width: 100%;
+.wrapper {
+  min-height: 100vh;
   position: relative;
-  height: auto !important;
-  height: 100%;
-  min-height: 100%;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+  text-align: center
 }
 #contents {
   padding-bottom: 140px;
@@ -50,16 +50,14 @@ header ul:after {
 }
 footer {
   width: 100%;
-  background-color: #4169e1;;
-  padding: 20px 0 10px 0;
-  color: white;
-  margin: auto;
-  padding-bottom: 10px;
-  font-size: 12px;
-  position: fixed;
-  bottom: 0;
-  height: 140px;
-}
+    background-color: #4169e1;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+
+ position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+  }
 .contents {
   height: 100px;
 }

@@ -1,29 +1,32 @@
 <header>
-  <h1>投稿一覧</h1>
+  <h1><span class="label label-default">投稿一覧</h1>
   <p><%= notice %></p>
 </header>
-<br><%= link_to 'ブログ一覧画面に戻る', '/blogs' %>
-<div >
-  <table>
-    <tr>
-      <th>タイトル</th>
-      <th>内容</th>
-      <th>imege</th>
-    </tr>
-    <% @blogs.each do |blog| %>
-    <tr>
-      <td><%= blog.title %></td>
-      <td><%= blog.content %></td>
-      <td><%= image_tag(blog.image_url) if blog.image && blog.image.url %></td>
-      <td><%= link_to '閲覧', blog_path(blog.id) %></td>
-      <td><%= link_to "編集する", edit_blog_path(blog.id),data: { confirm: '本当に編集していいですか？' } %></td>
-      <td><%= link_to '削除する', blog_path(blog.id), method: :delete,data: { confirm: '本当に削除していいですか？' } %></td>
-      <td>ユーザー名<%= blog.user.name %></td>
-      <% end %>
-    </tr>
-  </table>
+<div class="container">
+
+     <nav class="menu">
+      <ul class="row">
+        <li class="col-md-4">タイトル</li>
+        <li class="col-md-4">コンテンツ</li>
+        <li class="col-md-4">画像</li>
+    </nav>
+     <nav class="main">
+       <ul class="row">
+        <% @blogs.each do |blog| %>
+        <li class="col-md--2"><%= blog.title %></li>
+        <li class="col-md--1"><%= blog.content %></li>
+        <li class="col-md--1"><%= image_tag(blog.image_url) if blog.image && blog.image.url %></li>
+        <li class="col-md--1"><%= link_to '閲覧', blog_path(blog.id) %></li>
+        <li class="col-md--1"><%= link_to "編集する", edit_blog_path(blog.id),data: { confirm: '本当に編集していいですか？' } %></li>
+        <li class="col-md--1"><%= link_to '削除する', blog_path(blog.id), method: :delete,data: { confirm: '本当に削除していいですか？' } %></li>
+        <li class="col-md--1">ユーザー名<%= blog.user.name %></li>
+      </ul>
+    </nav>
 </div>
+<% end %>
 <footer>
+  <br><%= link_to 'ブログ一覧画面に戻る', '/blogs' %>
   <p><%= link_to '新しくブログを投稿する', new_blog_path %></p>
+  <br><%= link_to "お問い合わせはこちら",  new_contact_path%></li>
   <p>株式会社yoshi</p>
 </footer>
